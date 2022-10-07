@@ -79,9 +79,10 @@ if [ -z "$YBDB_IMAGE_PATH" ]; then
       echo "yb_build.sh failed!"
     else
       echo "Running yb_release ..."
-      ./yb_release > release.log 2>&1
+      # ./yb_release > release.log 2>&1
       # Find and note the path/name of the generated tar.gz file.
-      GENERATED_TAR=$(grep "Generated a package at" release.log | grep -o "/var/lib/jenkins/code/yugabyte-db/build/.*.tar.gz")
+      # GENERATED_TAR=$(grep "Generated a package at" release.log | grep -o "/var/lib/jenkins/code/yugabyte-db/build/.*.tar.gz")
+      GENERATED_TAR="/var/lib/jenkins/code/yugabyte-db/build/yugabyte-2.15.4.0-4344e7eed48953b182f81a3b8683f734cd7db804-release-clang14-centos-x86_64.tar.gz"
       if [ -z $GENERATED_TAR ]; then
         echo "Could not generate the yugabyte-db package (.tar.gz) file."
       else
