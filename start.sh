@@ -15,7 +15,7 @@ if [[ -z "$YBDB_IMAGE_PATH" ]]; then
   echo "WARNING! No Docker image was built/identified. Using the default one."
   DOCKER_BUILD_RUN=1
   dockerrun="FAIL"
-  YBDB_IMAGE_PATH=yugabytedb/yugabyte:latest
+  YBDB_IMAGE_PATH=yugabytedb/yugabyte:2.15.2.1-b1
 fi
 
 pushd $CURRENT_DIR_PATH
